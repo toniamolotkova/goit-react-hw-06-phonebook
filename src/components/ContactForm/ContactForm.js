@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import s from './ContactForm.module.css';
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/actions';
+import { TiTickOutline } from 'react-icons/ti';
 
 function ContactForm() {
   
@@ -69,6 +70,9 @@ function ContactForm() {
 
         <button type="submit" className={s.btn}>
           Add contact
+          <TiTickOutline style={{
+            marginLeft: 10, width: 25, height: 25
+          }} />
         </button>
       </form>
     )

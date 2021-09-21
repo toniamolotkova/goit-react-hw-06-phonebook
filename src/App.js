@@ -6,20 +6,25 @@ import ContactsList from './components/ContactsList';
 import Section from './components/Section';
 import { useSelector } from 'react-redux';
 import Filter from './components/Filter';
+import Container from 'components/Container';
 
 function App() {
 
   const contacts = useSelector((state) => state.contacts.items);
     return (
       <>
-        <Section>
-          <h1 className="title">Phonebook</h1>
+        <Container>
+          <header>
+             <h1 className="title">Phonebook</h1>
+          </header>
           <ContactForm />
-        </Section>
+        
         <Section title="Contacts">
           <Filter /> 
           { contacts && <ContactsList/> }
         </Section> 
+        </Container>
+        
          <ToastContainer />
       </>
     );
